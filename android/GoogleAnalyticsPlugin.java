@@ -107,6 +107,7 @@ public class GoogleAnalyticsPlugin extends CordovaPlugin {
       tracker = ga.newTracker(new JSONArray(rawArgs).getString(0));
       // setup uncaught exception handler
       tracker.enableExceptionReporting(true);
+      tracker.enableAdvertisingIdCollection(true);
       callback.success();
     } catch (JSONException e) {
       callback.error(e.toString());
